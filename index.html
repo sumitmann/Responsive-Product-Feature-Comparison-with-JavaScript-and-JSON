@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Compare cars</title>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,300' rel='stylesheet' type='text/css'>
+<style>
+@font-face{font-family: "RupeeForadianRegular";src: url("font/rupee_foradian-webfont.eot");src: url("font/rupee_foradian-webfont.eot?#iefix") format("embedded-opentype"),url("font/rupee_foradian-webfont.woff") format("woff"),url("font/rupee_foradian-webfont.woff") format("woff2"),url("font/rupee_foradian-webfont.ttf") format("truetype"),url("font/rupee_foradian-webfont.svg#RupeeForadianRegular") format("svg");font-weight: normal;font-style:normal;}
+@-webkit-keyframes ripple{ 
+0%{width:30px;height:30px;opacity:0.35;position: relative;}
+100%{width:50px;height:50px;margin-left:-10px;margin-top:-10px;opacity: 0.0;}
+}
+@-moz-keyframes ripple{ 0%{width:30px;height:30px;opacity:0.35;position: relative;}
+100%{width:50px;height:50px;margin-left:-10px;margin-top:-10px;opacity: 0.0;}
+}
+@-o-keyframes ripple{0%{width:30px;height:30px;opacity:0.35;position: relative;}
+100%{width:50px;height:50px;margin-left:-10px;margin-top:-10px;opacity: 0.0;}
+}
+@keyframes ripple{ 0%{width:30px;height:30px;opacity:0.35;position: relative;}
+100%{width:50px;height:50px;margin-left:-10px;margin-top:-10px;opacity: 0.0;}
+}
+*, *:before, *:after{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+body{font-family: 'Ubuntu', sans-serif;font-size: 14px;background:#e8ebee;}
+.cf:before,.cf:after{content: " ";display: table;}
+.cf:after{clear: both;}
+#productlist{max-width:980px;margin:50px auto;background:#fff;}
+.tbl_row{border-bottom:1px #d9e7e7 solid;position:relative;}
+.tbl_row:last-child,.tbl_row.header{border-bottom:0;}
+.tbl_row.header{background:#66aaa9;}
+.col{float:left;padding:20px 15px;color:#9f9ea3;font-size:12px;}
+.col50{width:50%;}
+.col30{width:30%;}
+.col20{width:20%;}
+.tbl_row.header .col{color:#fff;font-size:18px;}
+.text-right{text-align:right;}
+.text-center{text-align:center;}
+.lnk{color:#1876c2;text-decoration:none;font-size:16px;position:relative;font-weight:500;}
+.lnk:after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:#1876c2;transition:width 0.3s ease;}
+.lnk:hover:after{width:100%;}
+.ele_sep{display:block;margin-bottom:4px;}
+.rupeetext{font-size:18px;font-weight:500;color:#5d5d5d;margin-right:2px;}
+.rupeefont{position: relative;margin-right:3px;font: 16px 'RupeeForadianRegular';color:#5d5d5d;}
+.rupeefont:before{content: '`';}
+.btn_price{position:relative;width:160px;height:40px;border:1px #585858 solid;color:#585858;border-radius:2px;	text-decoration:none;text-align:center;vertical-align:middle;line-height:40px;font-size:15px;display:inline-block;transition:all 0.3s ease;}
+.btn_price:hover{color:#fff;background:#585858;}
+label.input-checkbox{display:inline-block;line-height:0;font-size:0;margin:0;cursor:pointer}
+label.input-checkbox>input{border:1px solid #9faab7;width:30px;height:30px;color:#fff;cursor:pointer;display:inline-block;outline:0;position:relative;z-index:2;background:0 0;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none}
+label.input-checkbox>input:hover{border:1px solid #66aaa9}
+label.input-checkbox>input:checked{border:1px solid #66aaa9}
+label.input-checkbox>input:checked::before{width:30px;height:30px;position:absolute;content:'\2713';display:inline-block;font-size:20px;text-align:center;line-height:30px;color:#66aaa9}
+label.input-checkbox>input:checked::after{-webkit-animation:ripple .65s;-moz-animation:ripple .65s;animation:ripple .65s;background:#66aaa9;content:'';display:block;position:relative;z-index:10;font-weight:500;}
+@media all and (max-width:767px){
+.tbl_row.header{display:none;}
+.col{float:none;width:100%;padding:15px 15px 15px 45px;text-align:center !important;}
+.col20{padding:0;}
+.col30{padding-top:0;}
+.price{display:block;margin:10px 0px;}
+label.input-checkbox{position:Absolute;left:0px;top:0px;}
+}
+</style>
+</head>
+<section id="productlist">
+	<div class="tbl_row header cf">
+	<div class="col col50">
+    	Model Name
+    </div>
+    <div class="col col30">
+    	&nbsp;
+    </div>
+    <div class="col col20 text-right">
+    	Compare
+    </div>
+    </div>
+    <div class="tbl_row cf">
+	<div class="col col50">
+    	<span class="ele_sep"><a href="#" class="lnk">Renault Duster</a></span>
+        <span class="ele_sep">Diesel, Automatic, 19.6 KPL</span>
+        <span class="price"><span class="rupeefont"></span><span class="rupeetext">11.67 lakh</span></span> Ex-showroom Price (New Delhi)
+    </div>
+    <div class="col col30 text-center">
+    	<a href="#" class="btn_price">Check on Road Price</a>
+    </div>
+    <div class="col col20 text-right">
+    	<label class="input-checkbox">
+<input type="checkbox" class="comparecheck" data-id="car1">
+</label>
+    </div>
+    </div>
+<div class="tbl_row cf">
+	<div class="col col50">
+    	<span class="ele_sep"><a href="#" class="lnk">Renault Duster</a></span>
+        <span class="ele_sep">Diesel, Automatic, 19.6 KPL</span>
+        <span class="price"><span class="rupeefont"></span><span class="rupeetext">11.67 lakh</span></span> Ex-showroom Price (New Delhi)
+    </div>
+    <div class="col col30 text-center">
+    	<a href="#" class="btn_price">Check on Road Price</a>
+    </div>
+    <div class="col col20 text-right">
+    	<label class="input-checkbox">
+<input type="checkbox" class="comparecheck" data-id="car2">
+</label>
+    </div>
+    </div>
+    <div class="tbl_row cf">
+	<div class="col col50">
+    	<span class="ele_sep"><a href="#" class="lnk">Renault Duster</a></span>
+        <span class="ele_sep">Diesel, Automatic, 19.6 KPL</span>
+        <span class="price"><span class="rupeefont"></span><span class="rupeetext">11.67 lakh</span></span> Ex-showroom Price (New Delhi)
+    </div>
+    <div class="col col30 text-center">
+    	<a href="#" class="btn_price">Check on Road Price</a>
+    </div>
+    <div class="col col20 text-right">
+    	<label class="input-checkbox">
+<input type="checkbox" class="comparecheck" data-id="car3">
+</label>
+    </div>
+    </div>
+    <div class="tbl_row cf">
+	<div class="col col50">
+    	<span class="ele_sep"><a href="#" class="lnk">Renault Duster</a></span>
+        <span class="ele_sep">Diesel, Automatic, 19.6 KPL</span>
+        <span class="price"><span class="rupeefont"></span><span class="rupeetext">11.67 lakh</span></span> Ex-showroom Price (New Delhi)
+    </div>
+    <div class="col col30 text-center">
+    	<a href="#" class="btn_price">Check on Road Price</a>
+    </div>
+    <div class="col col20 text-right">
+    	<label class="input-checkbox">
+<input type="checkbox" class="comparecheck" data-id="car4">
+</label>
+    </div>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+<body>
+</body>
+</html>
